@@ -1,0 +1,43 @@
+body{
+	background: url("gradient_bg.png");
+	background-repeat: repeat-x;
+}
+
+article{
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid #7B7B7B;
+	border-top: 0.1em solid rgba(170, 166, 166, 0.41);
+	border-bottom: 0.05cm solid rgba(11, 1, 1, 0.1);
+}
+
+article h3{
+	color: green;
+}
+
+header{
+	color: red;
+	box-shadow: 0px 1.25px 7px;
+	margin: 5px;
+}
+
+iframe{
+	border-radius: 5px;
+}
+
+hr{
+	color: #ffffff4d;
+}
+
+p{
+	font-family: inherit sans-serif;
+	color: #867575;
+	font-size: 14px;
+	text-align: center;
+}
+
+a{
+	border: 1px solid #d1e5ea;
+	box-sizing: border-box;
+	box-shadow: 1px 0.5px 2px;
+}

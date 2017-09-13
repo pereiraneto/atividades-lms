@@ -1,0 +1,109 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+header .logo h1{
+  color: green;
+  font-weight: bold;
+}
+
+header .logo{
+  padding: 10px;
+}
+
+header .logo-descricao{
+  float: right;
+  position: relative;
+  bottom: 30px;
+  right: 20px;
+  font-size: 20px;
+  color: #7d7979;
+  font-weight: bold;
+}
+
+.nav_superior{
+  background-color: #175803;
+  overflow: auto;
+  width: 100%;
+}
+
+.nav_superior > ul{
+  list-style: none;
+}
+
+.nav_superior .dropdown{
+  float: left;
+  padding: 20px;
+  color: white;
+}
+
+.dropdown-button{
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.dropdown .dropdown-button:hover{
+  background-color: #FFF;
+  color: black;
+}
+
+.dropdown-content{
+  position: absolute;
+  color: black;
+  background: rgb(183, 177, 177);
+  display: none;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+.dropdown .dropdown-content .content{
+  float: left;
+  margin: 5px;
+  padding: 10px;
+}
+
+.dropdown .dropdown-content .content > ul{
+  list-style: none;
+}
+
+.dropdown .dropdown-content .content > ul > li > a{
+  display: block;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+}
+
+.dropdown .dropdown-content .content > ul > li > a:hover{
+  background-color: white;
+  color: black;
+}
+
+.nav-vertical{
+  background-color: rgb(183, 177, 177);
+  width: 20%;
+}
+
+.nav-vertical .content{
+  padding: 15px;
+}
+
+
+  .nav-vertical .content > ul{
+    list-style: none;
+}
+
+.nav-vertical .content > ul > li > a{
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-vertical .content > ul > li > a:hover{
+  background-color: white;
+  color: black;
+}

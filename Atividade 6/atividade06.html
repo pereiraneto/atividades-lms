@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Atividade 6</title>
+    <link rel="stylesheet" href="estilo.css">
+
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="sanduiche">
+        &#9776;
+      </div>
+      Atividade 6
+    </nav>
+    <nav id="nav-vertical" class="nav-vertical">
+      <div class="content">
+        <ul>
+          <li><a id="fittext1" href="#">Home</a></li>
+          <li><a id="fittext2" href="#">Contato</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="conteudo" class="conteudo">
+      <div class="acordeon">
+        <div class="header-acordeon">
+          <a href="#">Link 1</a>
+        </div>
+        <div class="content-acordeon active" id="id-content-acordeon">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in aliquet nisl. Praesent sed leo congue, fringilla eros eu, tempus metus. Nam mollis odio ipsum, non vehicula ipsum accumsan sodales. Morbi varius vitae elit euismod cursus. Donec a dapibus justo, in facilisis nisi. Suspendisse ut turpis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui risus, tincidunt at odio ut, ultrices dignissim ipsum. Cras ultrices erat nec leo luctus varius. Nulla sollicitudin tincidunt nulla, ut porta mauris volutpat vitae. Suspendisse ornare dolor sit amet massa venenatis pulvinar.
+        </div>
+      </div>
+      <div class="acordeon">
+        <div class="header-acordeon">
+          <a href="#">Link 2</a>
+        </div>
+        <div class="content-acordeon" id="id-content-acordeon">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in aliquet nisl. Praesent sed leo congue, fringilla eros eu, tempus metus. Nam mollis odio ipsum, non vehicula ipsum accumsan sodales. Morbi varius vitae elit euismod cursus. Donec a dapibus justo, in facilisis nisi. Suspendisse ut turpis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui risus, tincidunt at odio ut, ultrices dignissim ipsum. Cras ultrices erat nec leo luctus varius. Nulla sollicitudin tincidunt nulla, ut porta mauris volutpat vitae. Suspendisse ornare dolor sit amet massa venenatis pulvinar.
+        </div>
+      </div>
+      <div class="acordeon">
+        <div class="header-acordeon">
+          <a href="#">Link 3</a>
+        </div>
+        <div class="content-acordeon" id="id-content-acordeon">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in aliquet nisl. Praesent sed leo congue, fringilla eros eu, tempus metus. Nam mollis odio ipsum, non vehicula ipsum accumsan sodales. Morbi varius vitae elit euismod cursus. Donec a dapibus justo, in facilisis nisi. Suspendisse ut turpis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui risus, tincidunt at odio ut, ultrices dignissim ipsum. Cras ultrices erat nec leo luctus varius. Nulla sollicitudin tincidunt nulla, ut porta mauris volutpat vitae. Suspendisse ornare dolor sit amet massa venenatis pulvinar.
+        </div>
+      </div>
+    </div>
+
+  </body>
+  <script type="text/javascript" src="script.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+ 	<script src="jquery.fittext.js"></script>
+	<script type="text/javascript">
+		$("#fittext1").fitText(0.5, { minFontSize: '7px', maxFontSize: '16px' });
+		$("#fittext2").fitText(0.5, { minFontSize: '7px', maxFontSize: '16px' });
+	</script>
+</html>

@@ -1,0 +1,135 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  width: 900px;
+  margin: auto;
+  height: 100vh;
+}
+
+.coluna1{
+  float: left;
+  width: 30%;
+  height: 100%;
+}
+
+.body{
+  height: 90%;
+  border: 1px solid #ddd;
+}
+
+.coluna1 header{
+  background-color: #eee;
+  width: 100%;
+  height: 10%;
+  box-sizing: border-box;
+  padding: 10px;
+  position: relative;
+  z-index: 1000;
+  padding-right: 16px;
+  padding-left: 15px;
+  border: 1px solid;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-color: #ddd;
+}
+
+.coluna1 header span{
+  float: left;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.coluna1 header button{
+  float: right;
+  margin: 10px;
+  padding: 3px;
+}
+
+.coluna2{
+  float: left;
+  width: 70%;
+  height: 100%;
+}
+
+.coluna2 .panel{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+}
+
+.panel .head-panel{
+  height: 10%;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: #333;
+  background-color: #eee;
+  border-color: #ddd;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1000;
+}
+
+.panel .body-panel{
+  height: 90%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.amigo{
+  width: 100%;
+  height: 7%;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 5px 0px;
+}
+
+.amigo:hover{
+  background: rgba(220, 220, 220, 0.28);
+}
+
+.amigo .img-user{
+  width: 10%;
+  float: left;
+}
+
+.amigo .span-user{
+  width: 90%;
+  float: left;
+}
+
+.span-user span{
+  padding: 20px;
+}
+
+.img-user img{
+  width: 100%;
+  padding: 5px;
+}
+
+.user-send-msg{
+  background-color: #62c162;
+}
+
+.mesagem-user{
+  float: right;
+}
+
+.user-send-msg p{
+  text-align: right;
+}
+
+.user-receive-msg{
+  background-color: white;
+}
+
+.mensagem{
+  margin: 5px;
+  padding: 5px;
+  overflow: auto;
+}

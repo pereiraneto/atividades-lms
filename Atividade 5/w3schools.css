@@ -59,7 +59,7 @@ header .logo-descricao{
   z-index: -1;
 }
 
-.dropdown .dropdown-button:hover + .dropdown-content{
+.dropdown:hover .dropdown-button + .dropdown-content{
   max-height: 1000px;
   opacity: 1;
 }

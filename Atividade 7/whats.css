@@ -77,8 +77,13 @@
 
 .panel .body-panel{
   height: 90%;
-  padding: 15px;
+  padding: 5px;
   box-sizing: border-box;
+}
+
+.panel .body-panel img{
+  width: 100%;
+  height: 100%;
 }
 
 .amigo{
@@ -91,6 +96,10 @@
 
 .amigo:hover{
   background: rgba(220, 220, 220, 0.28);
+}
+
+.amigo:active .panel .body-panel{
+  background-image: url(fundo2.png);
 }
 
 .amigo .img-user{
@@ -112,21 +121,25 @@
   padding: 5px;
 }
 
-.user-send-msg{
-  background-color: #62c162;
+.msg-estilo{
+  float: left;
+  background-color: #a8ddf7;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
 }
 
-.mesagem-user{
-  float: right;
+.msg-estilo p{
+  padding: 3px;
 }
 
-.user-send-msg p{
+/*.user-send-msg p{
   text-align: right;
-}
+}*/
 
-.user-receive-msg{
+/*.user-receive-msg{
   background-color: white;
-}
+}*/
 
 .mensagem{
   margin: 5px;

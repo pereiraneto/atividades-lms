@@ -1,14 +1,8 @@
 let body = document.querySelector(".body");
+let bodyPanel = document.querySelector(".body-panel");
+let imgBody = document.getElementById("img-body");
 
-let amigos = [
-  {"usuario" : "Antonio Neto", "mensagens": [{"usuario": "Antonio Neto","texto": "Tudo bem?"},{"usuario": "Pereira Neto","texto": "Tudo Tranqs"},{"usuario": "Antonio Neto","texto": "Que bom"}]},
-  {"usuario": "Joao Melo","mensagens": [{"usuario": "Joao Melo","texto": "Na paz?"},{"usuario": "Pereira Neto","texto": "Show"},{"usuario": "Joao Melo","texto": "Que bom"}]},
-  {"usuario": "Junior Rodrigues","mensagens": [{"usuario": "Pereira Neto","texto": "Bom?"},{"usuario": "Junior Rodrigues","texto": "Bom"},{"usuario": "Pereira Neto","texto": "Que bom"}]}
-];
-
-console.log(amigos);
-
-function criarAmigo(name){
+function criarGrupo(name,  i, id){
   let amigo = document.createElement("div");
   let imgUser = document.createElement("div");
   let spanUser = document.createElement("div");
@@ -29,15 +23,27 @@ function criarAmigo(name){
   imgUser.classList.add("img-user");
   spanUser.classList.add("span-user");
   span.classList.add(".span-amigos");
-}
-criarAmigo(amigos[0].usuario);
-criarAmigo(amigos[1].usuario);
-criarAmigo(amigos[2].usuario);
 
-let amigoList = document.querySelectorAll(".amigo");
+  amigo.addEventListener("click", function(){spanHeadPanel(i)});
+  amigo.addEventListener("click", function(){bodyPanel.style.backgroundImage="url('fundo2.png')"});
+  amigo.addEventListener("click", function(){iterarMensagens(id)});
+}
+
+let xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function(){
+  if(xhttp.readyState==4){
+    let obj_parsed = JSON.parse(xhttp.responseText);
+    for(let i=0; i<obj_parsed.length; i++){
+      criarGrupo(obj_parsed[i].groupName, i, obj_parsed[i].groupID);
+    }
+  }
+}
+xhttp.open('GET','http://rest.learncode.academy/api/pereira/groups',true);
+xhttp.send();
+
+//let amigoList = document.querySelectorAll(".amigo");
 let headPanel = document.querySelector(".head-panel");
 let listSpan = document.getElementsByClassName(".span-amigos");
-let bodyPanel = document.querySelector(".body-panel");
 
 function spanHeadPanel(i){
   document.getElementById("span").innerHTML="";
@@ -48,48 +54,46 @@ function spanHeadPanel(i){
   span.appendChild(spanTexto);
 }
 
-for (let i = 0; i < amigoList.length; i++) {
-  amigoList[i].addEventListener("click", function(){spanHeadPanel(i)});
-}
-for (let i = 0; i < amigoList.length; i++) {
-  amigoList[i].addEventListener("click", function(){iterarMensagens(i)});
-}
-
-function iterarMensagens(i){
+function iterarMensagens(id){
   document.getElementById("body-panel").innerHTML="";
   let div = document.createElement("div");
-  for (let j = 0; j < amigos[i].mensagens.length; j++) {
-    let div2 = document.createElement("div");
-    div2.classList.add("mensagem");
-    let div3 = document.createElement("div");
-    div3.classList.add("mesagem-user");
-    let usuario = amigos[i].mensagens[j].usuario;
-    let p = document.createElement("p");
-    let textPuser = document.createTextNode(usuario);
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function(){
+    if(xhttp.readyState==4){
+      let obj_parsed = JSON.parse(xhttp.responseText);
+      for(let j=0; j<obj_parsed.length; j++){
+        let div2 = document.createElement("div");
+        div2.classList.add("mensagem");
+        let div3 = document.createElement("div");
+        div3.classList.add("msg-estilo");
+        let usuario = obj_parsed[j].userName;
+        let rand1 = Math.floor(Math.random() * 255);
+        let rand2 = Math.floor(Math.random() * 255);
+        let rand3 = Math.floor(Math.random() * 255);
+        console.log(rand1);
+        console.log(rand2);
+        console.log(rand3);
+        let p = document.createElement("p");
+        p.style.color="rgb("+rand1+","+rand2+","+rand3+")";
+        let textPuser = document.createTextNode(usuario);
 
-    let texto = amigos[i].mensagens[j].texto;
-    let p2 = document.createElement("p");
-    let textPtexto = document.createTextNode("-------"+texto);
+        let texto = obj_parsed[j].message;
+        let p2 = document.createElement("p");
+        let textPtexto = document.createTextNode(texto);
 
-    p.appendChild(textPuser);
-    p2.appendChild(textPtexto);
+        p.appendChild(textPuser);
+        p2.appendChild(textPtexto);
 
-    div2.appendChild(p);
-    div2.appendChild(p2);
-    div.appendChild(div2);
+        div3.appendChild(p);
+        div3.appendChild(p2);
+        div2.appendChild(div3);
+        div.appendChild(div2);
 
-    let user = document.getElementById("span").innerHTML;
-
-    if(user == usuario){
-      div2.classList.add("user-receive-msg");
-    }else{
-      div3.appendChild(p);
-      div3.appendChild(p2);
-      div2.appendChild(div3);
-      div2.classList.add("user-send-msg");
+        bodyPanel.appendChild(div);
+      }
     }
-
   }
-
-  bodyPanel.appendChild(div);
+  let url = 'http://rest.learncode.academy/api/pereira/'+id;
+  xhttp.open('GET',url,true);
+  xhttp.send();
 }

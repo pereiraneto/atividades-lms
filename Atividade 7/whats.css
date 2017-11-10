@@ -2,11 +2,14 @@
   margin: 0;
   padding: 0;
 }
-
+body{
+    font-family: sans-serif;
+}
 .container{
   width: 900px;
   margin: auto;
-  height: 100vh;
+  height: 99vh;
+  position: relative;
 }
 
 .coluna1{
@@ -43,11 +46,20 @@
 }
 
 .coluna1 header button{
+  color: rgba(212, 11, 11, 0.9);
+  font-weight: 700;
   float: right;
   margin: 10px;
-  padding: 3px;
+  padding: 7px 17px;
+  border: none;
+  background: rgba(162, 162, 162, 0.7);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
 }
 
+.coluna1 header button:hover{
+  background: rgba(31, 31, 31, 0.46);
+}
 .coluna2{
   float: left;
   width: 70%;
@@ -79,6 +91,7 @@
   height: 90%;
   padding: 5px;
   box-sizing: border-box;
+  position: relative;
 }
 
 .panel .body-panel img{
@@ -98,9 +111,9 @@
   background: rgba(220, 220, 220, 0.28);
 }
 
-.amigo:active .panel .body-panel{
+/*.amigo:active .panel .body-panel{
   background-image: url(fundo2.png);
-}
+}*/
 
 .amigo .img-user{
   width: 10%;
@@ -123,26 +136,190 @@
 
 .msg-estilo{
   float: left;
-  background-color: #a8ddf7;
+  background-color: #efefef;
   border-radius: 5px;
   color: black;
   font-weight: bold;
+  width: 45%;
 }
 
 .msg-estilo p{
   padding: 3px;
+  padding-left: 9px;
+  padding-right: 7px;
 }
-
-/*.user-send-msg p{
-  text-align: right;
-}*/
-
-/*.user-receive-msg{
-  background-color: white;
-}*/
 
 .mensagem{
   margin: 5px;
   padding: 5px;
   overflow: auto;
+}
+
+.msg-estilo-send{
+  float: right;
+  background-color: #dbf4c6;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  width: 45%;
+}
+
+.msg-estilo-send p{
+  padding: 3px;
+  padding-left: 9px;
+  padding-right: 7px;
+  text-align: justify;
+}
+
+
+/* ---------------- Modal */
+
+.modal-overlay{
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  animation: overlay 600ms;
+  z-index: 9999;
+}
+
+.modal{
+  position: fixed;
+  background: gray;
+  background-color: rgba(22, 186, 212, 1);
+  width: 60%;
+  top: 10%;
+  left: 20%;
+  border-radius: 10px 5px 5px 0px;
+  display: none;
+  animation: modal 600ms;
+  z-index: 9999;
+}
+
+.modal .modal-header{
+  text-align: center;
+  margin: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.modal .modal-body{
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.modal-body input{
+  margin: 5px;
+}
+
+.span-error{
+  color: red;
+  display: block;
+  text-align: center;
+}
+
+#span{
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0px 1px 5px;
+  color: rgba(0, 0, 0, 0.53);
+}
+
+@keyframes overlay {
+  from{
+    background-color: rgba(0,0,0,0);
+  }to{
+    background-color: rgba(0,0,0,0.7);
+  }
+}
+
+@keyframes modal {
+  from{
+    top: -30%;
+    transform: scale(1,0);
+  }to{
+    top:10%;
+    transform: scale(1,1);
+  }
+}
+
+.footer{
+  background-color: #f5f1ee;
+  width: 100%;
+  min-height: 48px;
+  position: absolute;
+  top: 91%;
+  right: 0%;
+}
+
+.input-msg{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  position: absolute;
+}
+
+.input-msg input{
+  width: 97%;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+}
+
+.msgs{
+  height: 91%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.form-group{
+  width: 100%;
+  height: 24%;
+}
+
+.lista-grupos{
+  width: 100%;
+  height: 77%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.form-group-header{
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.form-group-body{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+}
+
+h1, h2, h3, h4{
+  font-family: 'Lobster', cursive;
+}
+
+.form input{
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: #e8ffff;
+  padding: 3px;
+}
+
+.form{
+  width: 100%;
+  text-align: center;
+}
+
+.form-submit{
+  text-align: center;
 }

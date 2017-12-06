@@ -29,7 +29,7 @@ let active = 0;
 
 function abrirAcordeon(i){
   contentAcordeons[active].classList.remove("active");
-  contentAcordeons[i].classList.add(".active");
+  contentAcordeons[i].classList.add("active");
   let headers = document.querySelectorAll("#id-content-acordeon");
   for (let i = 0; i < headers.length; i++) {
     headers[i].style.transition="all 500ms";

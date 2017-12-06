@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Galeria de Produtos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- <nav class="col-lg-12 col-md-12 col-xs-12 barra-superior">
+      <div class="col-md-2 sair">
+        <button type="button" id="button3">Sair</button>
+      </div>
+
+      <div class="dropdown col-md-3" id="dropdown3">
+        <div class="dropdown-header ">
+          <button type="button" id="button4">Cesta</button>
+        </div>
+        <div class="dropdown-content">
+          <div class="cesta">
+
+          </div>
+          <div class="finalizar-button">
+            <button type="button" id="button5">Finalizar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dropdown col-md-3" id="dropdown1">
+        <div class="dropdown-header">
+          <button type="button" name="button" id="button">Entrar</button>
+        </div>
+        <div class="dropdown-content">
+          <form method="get" id="form">
+            <input type="text" id="usuarioLogin" name="usuario" placeholder="Usuario">
+            <input type="password" id="senhaLogin" name="senha" placeholder="Senha">
+            <input type="submit" id="submit">
+            <div class="erro"></div>
+          </form>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="dropdown col-md-3" id="dropdown2">
+        <div class="dropdown-header">
+          <button type="button" name="button" id="button2">Cadastrar</button>
+        </div>
+        <div class="dropdown-content">
+          <form method="post">
+            <input type="text" id="usuarioCad" name="usuario" placeholder="Usuario">
+            <input type="password" id="senhaCad" name="senha" placeholder="Senha">
+            <input type="submit" id="submit2" value="Cadastrar">
+          </form>
+        </div>
+      </div>
+    </nav> -->
+
+    <nav class="navbar navbar-default">
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" id="button3" href="#">Sair</span></a>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown"id="dropdown3">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Cesta
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu cesta" aria-labelledby="dropdownMenu1">
+
+            </ul>
+            <button type="button" id="button5" class="btn btn-primary">Finalizar</button>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown"id="dropdown1">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Entrar
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <form method="get" id="form">
+                <div class="form-group">
+                  <label>Usuario:</label>
+                  <input type="text" class="form-control" id="usuarioLogin">
+                </div>
+                <div class="form-group">
+                  <label>Senha</label>
+                  <input type="password" class="form-control" id="senhaLogin">
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit">Entrar</button>
+                <div class="alert alert-danger erro" role="alert"></div>
+              </form>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown"id="dropdown2">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Cadastrar
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <form method="post">
+                <div class="form-group">
+                  <label>Usuario:</label>
+                  <input type="text" class="form-control" id="usuarioCad">
+                </div>
+                <div class="form-group">
+                  <label>Senha</label>
+                  <input type="password" class="form-control" id="senhaCad">
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit2">Cadastrar</button>
+                <div class="alert alert-success sucesso" role="alert"></div>
+              </form>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+
+    <div class="col-md-12">
+      <div class="lista-produtos col-md-10">
+        <div class="produto col-md-3">
+          <div class="foto-produto">
+            <img src="carne.jpg">
+          </div>
+          <div class="preco-produto col-md-12">
+            <span id="spanCarne">500</span>
+          </div>
+          <div class="informacoes">
+            <div class="botao-adicionar" id="botao-adicionar">
+              <button type="button" class="btn btn-primary" id="adicionar1">Adicionar</button>
+            </div>
+            <div class="qtd-produto" id="qtd-produto">
+              <input type="text" name="qtd" id="qtd1">
+            </div>
+          </div>
+        </div>
+        <div class="produto col-md-3">
+          <div class="foto-produto">
+            <img src="alho.jpg">
+          </div>
+          <div class="preco-produto col-md-12">
+            <span id="spanAlho">50</span>
+          </div>
+          <div class="informacoes">
+            <div class="botao-adicionar" id="botao-adicionar">
+              <button type="button" class="btn btn-primary" id="adicionar2">Adicionar</button>
+            </div>
+            <div class="qtd-produto" id="qtd-produto">
+              <input type="text" name="qtd" id="qtd2">
+            </div>
+          </div>
+        </div>
+        <div class="produto col-md-3">
+          <div class="foto-produto">
+            <img src="fio.png">
+          </div>
+          <div class="preco-produto col-md-12">
+            <span id="spanFio">250</span>
+          </div>
+          <div class="informacoes">
+            <div class="botao-adicionar" id="botao-adicionar">
+              <button type="button" class="btn btn-primary" id="adicionar3">Adicionar</button>
+            </div>
+            <div class="qtd-produto" id="qtd-produto">
+              <input type="text" name="qtd" id="qtd3">
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+
+    <script>
+      if(localStorage.getItem("usuario") === null){
+        $("#button").show();
+        $("#button2").show();
+        $("#button3").hide();
+        $("#dropdown3").hide();
+        $(".informacoes").hide();
+        $("#submit").click(function(){
+          event.preventDefault();
+          $.ajax({
+            type: "GET",
+            url: "http://rest.learncode.academy/api/pereira/usuarios",
+            success: function (data) {
+              let usuario = $("#usuarioLogin").val();
+              let senha = $("#senhaLogin").val();
+              for(let i=0; i<data.length; i++){
+                if((usuario == data[i].usuario) && (senha == data[i].senha)){
+                  $(".erro").empty();
+                  if(typeof(Storage) !== "undefined"){
+                    localStorage.setItem("usuario", usuario);
+                    history.go(0);
+                    break;
+                  }else {
+                    document.getElementById("spanUser").innerHTML = "Sorry, your browser does not support Web Storage...";
+                  }
+                }else{
+                  let p = $("<p></p>").text("Usuário ou senha inválidos !!");
+                  $(".erro").empty();
+                  $(".erro").append(p);
+                  // $("p").addClass("error");
+                }
+              }
+            }
+          })
+        });
+      }else{
+        $("#dropdown1").hide(100);
+        $("#dropdown2").hide(100);
+        $("#button3").show();
+        $(".informacoes").show();
+        $("#button3").click(function(){
+          localStorage.removeItem("usuario");
+          $("#button3").hide(100);
+          $("#button").show();
+          $("#button2").show();
+          $(".informacoes").hide(100);
+          history.go(0);
+        });
+      }
+
+      $("#submit2").click(function(e){
+        e.preventDefault();
+        let body = {
+          usuario: $("#usuarioCad").val(), senha:$("#senhaCad").val()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/pereira/usuarios",
+          data: body,
+          success: function () {
+            $("#usuarioCad").val("");
+            $("#senhaCad").val("");
+            let p = $("<p></p>").text("Usuário cadastrado com sucesso !!");
+            $(".sucesso").append(p);
+          }
+        })
+      });
+
+      function updateList(){
+        $.ajax({
+          type: "GET",
+          url: "http://rest.learncode.academy/api/pereira/produtos",
+          success: function (data) {
+            $(".cesta").empty();
+            for(let i=0; i<data.length; i++){
+              if(data[i].usuario == localStorage.getItem("usuario")){
+                insertItem(data[i].valor, data[i].qtd);
+              }
+            }
+          }
+        })
+      }
+
+      function insertItem(valor, qtd){
+        let p = $("<p></p>").text("Valor: "+ valor +" Qtd: "+qtd);
+        p.css("border-bottom","1px solid black");
+        p.css("padding","5px");
+        $(".cesta").append(p);
+      }
+      updateList();
+
+      $("#adicionar1").click(function() {
+        let body = {
+          usuario: localStorage.getItem("usuario"), valor:$("#spanCarne").text(), qtd:$("#qtd1").val()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/pereira/produtos",
+          data: body,
+          success: function () {
+            $("#qtd1").val("");
+            updateList();
+          }
+        })
+      });
+
+      $("#adicionar2").click(function() {
+        let body = {
+          usuario: localStorage.getItem("usuario"), valor:$("#spanAlho").text(), qtd:$("#qtd2").val()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/pereira/produtos",
+          data: body,
+          success: function () {
+            $("#qtd2").val("");
+            updateList();
+          }
+        })
+      });
+
+      $("#adicionar3").click(function() {
+        let body = {
+          usuario: localStorage.getItem("usuario"), valor:$("#spanFio").text(), qtd:$("#qtd3").val()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/pereira/produtos",
+          data: body,
+          success: function () {
+            $("#qtd3").val("");
+            updateList();
+          }
+        })
+      });
+
+      $("#button5").click(function(){
+        if($(".cesta").text() != ""){
+          window.location.href = "suas_compras.html";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -58,7 +58,6 @@ if(localStorage.getItem("usuario") === null){
     document.getElementById("button").innerHTML = "Entrar";
     document.getElementById("body").innerHTML = "";
     document.getElementById("span").innerHTML = "";
-    
     document.getElementById("body-panel").innerHTML = "";
     bodyPanel.style.backgroundImage="url('tela_wh.png')";
   });

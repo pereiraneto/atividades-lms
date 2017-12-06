@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Suas Compras</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="finalizar">
+      <button type="button" id="button">Finalizar Compra</button>
+      <p id="textoValorTotal"></p><span id="valorTotal"></span>
+      <input type="hidden" id="dataHora">
+    </div>
+
+    <script type="text/javascript">
+      function preencher(nome, qtd, valor){
+        let p1 = $("<p></p>").text("Comprador: " + nome);
+        let p2 = $("<p></p>").text("Quantidade do produto " + qtd);
+        let p3 = $("<p></p>").text("Valor do produto " + valor);
+        let div = $("<div></div>");
+        p1.css("margin", "5px");
+        p2.css("margin", "5px");
+        p3.css("margin", "5px");
+        div.append(p1);
+        div.append(p2);
+        div.append(p3);
+        div.css("border-bottom", "1px solid black");
+        $(".finalizar").append(div);
+      }
+
+      $.ajax({
+        type: "GET",
+        url: "http://rest.learncode.academy/api/pereira/produtos",
+        success: function (data) {
+          let valorTotal = 0;
+          for(let i=0; i<data.length; i++){
+            if(data[i].usuario == localStorage.getItem("usuario")){
+              valorTotal += (parseFloat(data[i].qtd) * parseFloat(data[i].valor));
+              preencher(data[i].usuario, data[i].qtd, data[i].valor);
+            }
+          }
+          $("#textoValorTotal").text("Valor total da compra é: ");
+          $("#valorTotal").text(valorTotal);
+        }
+      })
+
+      $("#button").click(function(){
+        let d = new Date();
+        let body = {
+          usuario: localStorage.getItem("usuario"), valorTotal:$("#valorTotal").text(),
+          data:d.toLocaleString()
+        };
+        $.ajax({
+          type: "POST",
+          url: "http://rest.learncode.academy/api/pereira/compras",
+          data: body,
+          success: function () {
+
+          }
+        })
+      });
+    </script>
+  </body>
+</html>

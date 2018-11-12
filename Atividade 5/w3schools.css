@@ -197,4 +197,12 @@ header .logo-descricao{
     width: 100%;
 
   }
+
+  .logo-descricao{
+    display: none;
+  }
+
+  #box-animacao img{
+    margin-bottom: 40%;
+  }
 }
